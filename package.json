@@ -1,0 +1,24 @@
+{
+  "name": "consular",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oadetoye/consular.git"
+  },
+  "author": "Olayinka Adetoye",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oadetoye/consular/issues"
+  },
+  "homepage": "https://github.com/oadetoye/consular#readme",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "prompt": "^1.2.0",
+    "yargs": "^17.1.1"
+  }
+}
