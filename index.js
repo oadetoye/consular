@@ -4,3 +4,8 @@ const argv = require('yargs').argv;
    const scanDb = require('./src/scan-db');
    scanDb.execute();
  }
+
+ if (argv.migrate || argv.m) {
+   const migrate = require('./src/migrate');
+   migrate.execute();
+ }

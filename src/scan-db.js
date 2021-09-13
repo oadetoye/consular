@@ -38,7 +38,7 @@ class ScanDB {
 
         Promise.all(promises)
           .then((tableFields) => {
-            fs.writeFile('./db-init.json', JSON.stringify(tableFields, null, 4), (err) => {
+            fs.writeFile('./migrations/0-db-init.json', JSON.stringify(tableFields, null, 4), (err) => {
               if (err) {
                 console.error(err);
               } else {
@@ -53,7 +53,7 @@ class ScanDB {
   }
 
   execute() {
-    getConfig.prompt().then((config) => {
+    getConfig.get().then((config) => {
       this.openConnection(config);
       this.readDatabase(config.database);
     });

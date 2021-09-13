@@ -27,18 +27,24 @@ const schema = {
 };
 
 module.exports = {
-  prompt() {
+  get() {
     return new Promise((resolve, reject) => {
-      prompt.start();
+      if (process.env.host && process.env.user && process.env.database && process.env.password ) {
+        const { host, user, database, password } = process.env;
+        Object.assign(config, { host, database, user, password });
+        resolve(config);
+      } else {
+        prompt.start();
 
-      prompt.get(schema, (err, results) => {
-        if (err) {
-          reject(err);
-        } else {
-          Object.assign(config, results);
-          resolve(config);
-        }
-      });
+        prompt.get(schema, (err, results) => {
+          if (err) {
+            reject(err);
+          } else {
+            Object.assign(config, results);
+            resolve(config);
+          }
+        });
+      }
     })
   }
 };

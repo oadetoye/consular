@@ -102,4 +102,4 @@ dist
 
 # TernJS port file
 .tern-port
-db-init.json
+migrations/
